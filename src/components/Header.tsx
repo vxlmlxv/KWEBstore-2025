@@ -21,10 +21,11 @@ export const Header = () => {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const [categories, setCategories] = useState<Category[]>([]);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
-  const { getCartItemsCount } = useCart();
-  const cartItemsCount = getCartItemsCount();
+  const { cart, getCartItemsCount } = useCart();
+  const cartItemsCount = getCartItemsCount;
 
   console.log("Header - cart items count:", cartItemsCount);
+  console.log("Header - cart state:", cart);
   const navigate = useNavigate();
 
   // get categories from API

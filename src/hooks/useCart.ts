@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import type { CartItem, Product } from "../types";
 
 const CART_STORAGE_KEY = "kwebstore-cart";
@@ -91,9 +91,9 @@ export const useCart = () => {
     setCart([]);
   };
 
-  const getCartItemsCount = () => {
+  const getCartItemsCount = useMemo(() => {
     return cart.reduce((total, item) => total + item.quantity, 0);
-  };
+  }, [cart]);
 
   const getSelectedItemsTotal = () => {
     return cart

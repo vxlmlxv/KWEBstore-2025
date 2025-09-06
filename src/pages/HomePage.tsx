@@ -1,34 +1,10 @@
 import { motion } from "framer-motion";
-import { ShoppingBag, Truck, Shield, Headphones } from "lucide-react";
 import { ProductCard } from "../components/ProductCard";
 import { ProductGridSkeleton } from "../components/Skeleton";
 import { useInfiniteScroll } from "../hooks/useInfiniteScroll";
 
 export const HomePage = () => {
   const { products, loading } = useInfiniteScroll();
-
-  const features = [
-    {
-      icon: <ShoppingBag className="w-8 h-8 text-primary-500" />,
-      title: "다양한 상품",
-      description: "수천 가지 상품을 한 곳에서",
-    },
-    {
-      icon: <Truck className="w-8 h-8 text-primary-500" />,
-      title: "빠른 배송",
-      description: "전국 어디든 빠르게",
-    },
-    {
-      icon: <Shield className="w-8 h-8 text-primary-500" />,
-      title: "안전한 결제",
-      description: "보안이 검증된 결제 시스템",
-    },
-    {
-      icon: <Headphones className="w-8 h-8 text-primary-500" />,
-      title: "24/7 고객지원",
-      description: "언제든지 도움을 받으세요",
-    },
-  ];
 
   return (
     <div className="min-h-screen">
@@ -60,9 +36,6 @@ export const HomePage = () => {
             2025-2 KWEB 정회원 면제 과제
           </motion.p>
         </motion.div>
-
-        {/* 배경 장식 */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-primary-100 dark:bg-primary-900 rounded-full -translate-x-32 -translate-y-32 opacity-50" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-100 dark:bg-primary-900 rounded-full translate-x-48 translate-y-48 opacity-30" />
       </section>
 
